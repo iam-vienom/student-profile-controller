@@ -1,0 +1,272 @@
+:root {
+  --bg: #f9f5f6;
+  --card-bg: #ffffff;
+  --text: #594545;
+  --muted: #886F6F;
+  --accent: #594545;
+  --active-color: #594545;
+  --inactive-color: #BBBBBB;
+  --border: #d3e8da;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+
+
+  background-image:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.8),
+      transparent 40%
+    );
+}
+
+
+.app-header {
+  padding: 1.5rem 2rem;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+
+  border-radius: 0 0 20px 20px;
+  box-shadow:
+    8px 8px 16px rgb(245, 192, 192),
+    -8px -8px 16px rgb(255, 113, 113);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.app-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+.profile-card {
+  flex: 1 1 320px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--muted);
+  box-shadow:
+    8px 8px 16px rgb(245, 192, 192),
+    -8px -8px 16px rgb(255, 113, 113);
+}
+
+.profile-card h2 {
+  margin-top: 0;
+}
+
+.profile-card.active {
+  border-left-color: var(--active-color);
+}
+
+.profile-card.inactive {
+  border-left-color: var(--inactive-color);
+}
+
+#profileStatus {
+  font-weight: bold;
+
+  /* Claymorphism */
+  padding: 0.4rem 0.7rem;
+  border-radius: 10px;
+  box-shadow:
+    inset 3px 3px 6px rgba(180, 160, 150, 0.25),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.8);
+}
+
+.profile-card.active #profileStatus {
+  color: var(--active-color);
+}
+
+.profile-card.inactive #profileStatus {
+  color: var(--inactive-color);
+}
+
+.details-panel {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border);
+  font-size: 0.9rem;
+  color: var(--muted);
+
+
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow:
+    inset 4px 4px 8px rgba(180, 160, 150, 0.2),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+}
+
+.hidden {
+  display: none;
+}
+
+
+.control-panel {
+  flex: 1 1 320px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  box-shadow:
+    8px 8px 16px rgba(180, 160, 150, 0.3),
+    -8px -8px 16px rgba(255, 255, 255, 0.85);
+}
+
+.field {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.field label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.field input,
+.field select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-size: 1rem;
+
+
+  background: var(--card-bg);
+  box-shadow:
+    inset 3px 3px 6px rgba(180, 160, 150, 0.25),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.8);
+  outline: none;
+}
+
+.field input:focus,
+.field select:focus {
+  box-shadow:
+    inset 3px 3px 6px rgba(180, 160, 150, 0.3),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.85),
+    0 0 0 3px rgba(46, 125, 79, 0.12);
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.button-row button {
+  flex: 1 1 auto;
+  padding: 0.55rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+
+
+  box-shadow:
+    6px 6px 12px rgba(180, 160, 150, 0.35),
+    -6px -6px 12px rgba(255, 255, 255, 0.8);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.button-row button:hover {
+  filter: brightness(0.92);
+
+  transform: translateY(-2px);
+  box-shadow:
+    8px 8px 14px rgba(180, 160, 150, 0.35),
+    -6px -6px 14px rgba(255, 255, 255, 0.85);
+}
+
+.button-row button:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 3px 3px 6px rgba(0, 0, 0, 0.2),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.2);
+}
+
+.form-message {
+  min-height: 1.2rem;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--inactive-color);
+}
+
+body.dark-theme {
+  background: #0f1f16;
+  color: #d9ece0;
+
+  background-image:
+    radial-gradient(
+      circle at top left,
+      rgba(80, 120, 95, 0.2),
+      transparent 40%
+    );
+}
+
+body.dark-theme .app-header,
+body.dark-theme .profile-card,
+body.dark-theme .control-panel {
+  background: #17301f;
+  border-color: #2b4d38;
+
+  box-shadow:
+    8px 8px 16px rgba(5, 15, 9, 0.55),
+    -8px -8px 16px rgba(45, 75, 57, 0.45);
+}
+
+body.dark-theme .field label,
+body.dark-theme .details-panel {
+  color: #8fb39d;
+}
+
+body.dark-theme .field input,
+body.dark-theme .field select {
+  background: #0f1f16;
+  color: #d9ece0;
+  border-color: #2b4d38;
+
+  box-shadow:
+    inset 3px 3px 6px rgba(5, 15, 9, 0.5),
+    inset -3px -3px 6px rgba(45, 75, 57, 0.45);
+}
+
+body.dark-theme .details-panel {
+  box-shadow:
+    inset 4px 4px 8px rgba(5, 15, 9, 0.45),
+    inset -4px -4px 8px rgba(45, 75, 57, 0.4);
+}
+
+body.dark-theme #profileStatus {
+  box-shadow:
+    inset 3px 3px 6px rgba(5, 15, 9, 0.45),
+    inset -3px -3px 6px rgba(45, 75, 57, 0.4);
+}
+
+body.dark-theme .button-row button {
+  box-shadow:
+    6px 6px 12px rgba(5, 15, 9, 0.55),
+    -6px -6px 12px rgba(45, 75, 57, 0.45);
+}
