@@ -1,12 +1,12 @@
 :root {
-  --bg: #f9f5f6;
-  --card-bg: #ffffff;
+  --bg: #d2c4d4;
+  --card-bg: #d2b3c7;
   --text: #594545;
-  --muted: #886F6F;
-  --accent: #594545;
-  --active-color: #594545;
-  --inactive-color: #BBBBBB;
-  --border: #d3e8da;
+  --muted: #d1a2ba;
+  --accent: #cf7f9f;
+  --active-color: #cf7f9f;
+  --inactive-color: #d091ad;
+  --border: #d2b3c7;
 }
 
 * {
@@ -19,16 +19,13 @@ body {
   background: var(--bg);
   color: var(--text);
   transition: background 0.3s ease, color 0.3s ease;
-
-
   background-image:
     radial-gradient(
       circle at top left,
-      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.45),
       transparent 40%
     );
 }
-
 
 .app-header {
   padding: 1.5rem 2rem;
@@ -37,8 +34,8 @@ body {
 
   border-radius: 0 0 20px 20px;
   box-shadow:
-    8px 8px 16px rgb(245, 192, 192),
-    -8px -8px 16px rgb(255, 113, 113);
+    8px 8px 16px rgba(150, 110, 130, 0.3),
+    -8px -8px 16px rgba(255, 255, 255, 0.65);
 }
 
 .app-header h1 {
@@ -55,7 +52,6 @@ body {
   margin: 0 auto;
 }
 
-
 .profile-card {
   flex: 1 1 320px;
   background: var(--card-bg);
@@ -63,9 +59,10 @@ body {
   padding: 1.5rem;
   border: 1px solid var(--border);
   border-left: 6px solid var(--muted);
+
   box-shadow:
-    8px 8px 16px rgb(245, 192, 192),
-    -8px -8px 16px rgb(255, 113, 113);
+    8px 8px 16px rgba(150, 110, 130, 0.3),
+    -8px -8px 16px rgba(255, 255, 255, 0.7);
 }
 
 .profile-card h2 {
@@ -83,12 +80,12 @@ body {
 #profileStatus {
   font-weight: bold;
 
-  /* Claymorphism */
   padding: 0.4rem 0.7rem;
   border-radius: 10px;
+
   box-shadow:
-    inset 3px 3px 6px rgba(180, 160, 150, 0.25),
-    inset -3px -3px 6px rgba(255, 255, 255, 0.8);
+    inset 3px 3px 6px rgba(150, 110, 130, 0.25),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.65);
 }
 
 .profile-card.active #profileStatus {
@@ -106,28 +103,29 @@ body {
   font-size: 0.9rem;
   color: var(--muted);
 
-
   padding: 1rem;
   border-radius: 10px;
+
   box-shadow:
-    inset 4px 4px 8px rgba(180, 160, 150, 0.2),
-    inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+    inset 4px 4px 8px rgba(150, 110, 130, 0.2),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.65);
 }
 
 .hidden {
   display: none;
 }
 
-
+/* Control Panel */
 .control-panel {
   flex: 1 1 320px;
   background: var(--card-bg);
   border-radius: 12px;
   padding: 1.5rem;
   border: 1px solid var(--border);
+
   box-shadow:
-    8px 8px 16px rgba(180, 160, 150, 0.3),
-    -8px -8px 16px rgba(255, 255, 255, 0.85);
+    8px 8px 16px rgba(150, 110, 130, 0.3),
+    -8px -8px 16px rgba(255, 255, 255, 0.7);
 }
 
 .field {
@@ -149,20 +147,22 @@ body {
   border: 1px solid var(--border);
   font-size: 1rem;
 
-
   background: var(--card-bg);
+  color: var(--text);
+
   box-shadow:
-    inset 3px 3px 6px rgba(180, 160, 150, 0.25),
-    inset -3px -3px 6px rgba(255, 255, 255, 0.8);
+    inset 3px 3px 6px rgba(150, 110, 130, 0.25),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.65);
+
   outline: none;
 }
 
 .field input:focus,
 .field select:focus {
   box-shadow:
-    inset 3px 3px 6px rgba(180, 160, 150, 0.3),
-    inset -3px -3px 6px rgba(255, 255, 255, 0.85),
-    0 0 0 3px rgba(46, 125, 79, 0.12);
+    inset 3px 3px 6px rgba(150, 110, 130, 0.3),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.7),
+    0 0 0 3px rgba(207, 127, 159, 0.18);
 }
 
 .button-row {
@@ -182,29 +182,32 @@ body {
   cursor: pointer;
   font-size: 0.9rem;
 
-
   box-shadow:
-    6px 6px 12px rgba(180, 160, 150, 0.35),
-    -6px -6px 12px rgba(255, 255, 255, 0.8);
+    6px 6px 12px rgba(150, 110, 130, 0.35),
+    -6px -6px 12px rgba(255, 255, 255, 0.7);
+
   transition:
     transform 0.15s ease,
-    box-shadow 0.15s ease;
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
 }
 
 .button-row button:hover {
   filter: brightness(0.92);
 
   transform: translateY(-2px);
+
   box-shadow:
-    8px 8px 14px rgba(180, 160, 150, 0.35),
-    -6px -6px 14px rgba(255, 255, 255, 0.85);
+    8px 8px 14px rgba(150, 110, 130, 0.35),
+    -6px -6px 14px rgba(255, 255, 255, 0.75);
 }
 
 .button-row button:active {
   transform: translateY(1px);
+
   box-shadow:
-    inset 3px 3px 6px rgba(0, 0, 0, 0.2),
-    inset -3px -3px 6px rgba(255, 255, 255, 0.2);
+    inset 3px 3px 6px rgba(120, 80, 100, 0.25),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.3);
 }
 
 .form-message {
@@ -214,14 +217,15 @@ body {
   color: var(--inactive-color);
 }
 
+/* Dark Theme */
 body.dark-theme {
-  background: #0f1f16;
-  color: #d9ece0;
+  background: #392b37;
+  color: #f0dce7;
 
   background-image:
     radial-gradient(
       circle at top left,
-      rgba(80, 120, 95, 0.2),
+      rgba(207, 127, 159, 0.18),
       transparent 40%
     );
 }
@@ -229,44 +233,44 @@ body.dark-theme {
 body.dark-theme .app-header,
 body.dark-theme .profile-card,
 body.dark-theme .control-panel {
-  background: #17301f;
-  border-color: #2b4d38;
+  background: #4a3544;
+  border-color: #6d4d60;
 
   box-shadow:
-    8px 8px 16px rgba(5, 15, 9, 0.55),
-    -8px -8px 16px rgba(45, 75, 57, 0.45);
+    8px 8px 16px rgba(25, 15, 22, 0.55),
+    -8px -8px 16px rgba(105, 75, 92, 0.45);
 }
 
 body.dark-theme .field label,
 body.dark-theme .details-panel {
-  color: #8fb39d;
+  color: #d1a2ba;
 }
 
 body.dark-theme .field input,
 body.dark-theme .field select {
-  background: #0f1f16;
-  color: #d9ece0;
-  border-color: #2b4d38;
+  background: #392b37;
+  color: #f0dce7;
+  border-color: #6d4d60;
 
   box-shadow:
-    inset 3px 3px 6px rgba(5, 15, 9, 0.5),
-    inset -3px -3px 6px rgba(45, 75, 57, 0.45);
+    inset 3px 3px 6px rgba(25, 15, 22, 0.5),
+    inset -3px -3px 6px rgba(105, 75, 92, 0.45);
 }
 
 body.dark-theme .details-panel {
   box-shadow:
-    inset 4px 4px 8px rgba(5, 15, 9, 0.45),
-    inset -4px -4px 8px rgba(45, 75, 57, 0.4);
+    inset 4px 4px 8px rgba(25, 15, 22, 0.45),
+    inset -4px -4px 8px rgba(105, 75, 92, 0.4);
 }
 
 body.dark-theme #profileStatus {
   box-shadow:
-    inset 3px 3px 6px rgba(5, 15, 9, 0.45),
-    inset -3px -3px 6px rgba(45, 75, 57, 0.4);
+    inset 3px 3px 6px rgba(25, 15, 22, 0.45),
+    inset -3px -3px 6px rgba(105, 75, 92, 0.4);
 }
 
 body.dark-theme .button-row button {
   box-shadow:
-    6px 6px 12px rgba(5, 15, 9, 0.55),
-    -6px -6px 12px rgba(45, 75, 57, 0.45);
+    6px 6px 12px rgba(25, 15, 22, 0.55),
+    -6px -6px 12px rgba(105, 75, 92, 0.45);
 }
